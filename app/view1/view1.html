@@ -1,0 +1,19 @@
+<p>This is the partial for view 1.</p>
+
+<ul>
+    <list-element param="level1.name" ng-click="show = !show"></list-element>
+    <ul ng-repeat="item in level1.termsrelation" ng-show="show">
+        <list-element param="item.rel" ng-click="show2 = !show2"></list-element>
+        <ul ng-repeat="term in item.terms" ng-show="show2">
+            <list-element param="term.name" ng-click="show3 = !show3"></list-element>
+            <ul ng-if="term.name === 'Vegetables'" ng-repeat="item2 in level2.termsrelation" ng-show="show3">
+                <list-element param="item2.rel" ng-click="show4 = !show4"></list-element>
+                <ul ng-repeat="term2 in item2.terms" ng-show="show4">
+                    <list-element param="term2.name"></list-element>
+                </ul>
+            </ul>
+        </ul>
+    </ul>
+</ul>
+
+
